@@ -14,10 +14,16 @@
       <h5 class="card-title"><%= flat.name %></h5>
       <p class="card-text"><%= flat.address %></p>
       <div class='mb-3 row'>
-        <p class="col-sm-3 card-text d-inline"><i class="fas fa-user"></i> <%= flat.number_of_guests %></p>
-        <p class="col-sm-3 card-text d-inline"><i class="fas fa-euro-sign"></i> <%= flat.price_per_night %></p>
+        <p class="col-sm-4 card-text d-inline"><i class="fas fa-user"></i> <%= flat.number_of_guests %></p>
+        <p class="col-sm-4 card-text d-inline"><i class="fas fa-euro-sign"></i> <%= flat.price_per_night %></p>
       </div>
-      <%= link_to 'More info', flat_path(flat)  %>
+      <div>
+      <div class="align-items-end">
+        <%= link_to 'More info', flat_path(flat), class: 'pr-2 text-primary'  %>
+        <%= link_to 'Edit', edit_flat_path(flat), class: 'pr-2 text-warning'  %>
+        <%= link_to 'Remove', flat_path(flat), method: :delete, class: 'pr-2 text-danger', data: {confirm: "Are you sure you want to delete your flat: #{flat.name}?"}  %>
+      </div>
+    </div>
     </div>
   </div>
   </div>

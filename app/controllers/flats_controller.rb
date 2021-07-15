@@ -21,10 +21,30 @@ class FlatsController < ApplicationController
     @flat = Flat.find(params[:id])
   end
 
+  def edit
+    @flat = Flat.find(params[:id])
+  end
+
+  def update
+    @flat = Flat.find(params[:id])
+    @flat.update(flat_params)
+    if @flat.save!
+      redirect_to flat_path(@flat)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+      @flat = Flat.find(params[:id])
+      @flat.destroy
+      redirect_to flats_path
+  end
+
   private
 
   def flat_params
-    params.require(:flat).permit(:name, :description, :description, :price_per_night, :number_of_guests)
+    params.require(:flat).permit(:name, :description, :address, :price_per_night, :number_of_guests)
 
   end
 end
