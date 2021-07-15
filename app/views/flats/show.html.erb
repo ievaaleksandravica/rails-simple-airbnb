@@ -1,0 +1,21 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand">Simple AirBnB</a>
+  <%= link_to 'Add new flat', new_flat_path, class: 'btn btn-outline-primary my-2 my-sm-0' %>
+</nav>
+
+<div class="container mt-3" >
+  <h1 class="font-weight-normal mb-3 d-flex justify-content-center"><%= @flat.name %></h1>
+
+  <div class="d-flex align-items-stretch justify-content-center">
+    <div class="card mb-6" style="width: auto;">
+    <div class="card-body">
+      <h5 class="card-title font-weight-lighter"><%= @flat.description %></h5>
+      <p class="card-text font-weight-lighter"><%= @flat.address %></p>
+      <div class='mb-6 row'>
+         <p class="col-sm-2 card-text d-inline"><i class="fas fa-user"></i> <%= @flat.number_of_guests %></p>
+        <p class="col-sm-3 card-text d-inline"><i class="fas fa-euro-sign"></i> <%= @flat.price_per_night %></p>
+      </div>
+    </div>
+</div>
+
+</div>

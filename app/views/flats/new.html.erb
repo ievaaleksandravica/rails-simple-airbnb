@@ -1,0 +1,17 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand">Simple AirBnB</a>
+</nav>
+
+<div class="container mt-3" >
+  <h1 class="font-weight-normal mb-3">Please enter details about your flat below  </h1>
+<!-- app/views/reviews/new.html.erb -->
+  <%= simple_form_for(@flat) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :price_per_night %>
+    <%= f.input :number_of_guests %>
+    <%= f.submit "Add flat", class: "btn btn-primary" %>
+  <% end %>
+
+
+</div>
